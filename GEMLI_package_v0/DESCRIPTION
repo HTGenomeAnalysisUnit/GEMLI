@@ -1,12 +1,12 @@
 Package: GEMLI
 Type: Package
 Title: Gene expression memory based lineage inference
-Version: 0.1.0
+Version: 0.2.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Uses general characteristics of genes with lineage-specific expression 
     to predict cell lineages in scRNA-seq datasets. 
-URL: https://github.com/UPSUTER/GEMLI
+URL: https://github.com/HTGenomeAnalysisUnit/GEMLI
 Imports: 
     igraph (>= 1.4.3),
     HiClimR (>= 2.2.1),
