@@ -1,11 +1,13 @@
 quantify_clusters_iterative = function(data_matrix, marker_genes, N=2, fast=FALSE)
 {
+  message("== QUANTIFY CLUSTERS ==")
   iterate = T; i = 2
   genes = intersect(marker_genes, rownames(data_matrix)[rowMeans(data_matrix)>0])
   data_matrix = data_matrix[genes,]
   corr_expr_raw = calculate_correlations(t(data_matrix), fast=FALSE); corr_expr = (1 - corr_expr_raw)/2
   cell_clusters = data.matrix(matrix(0, nrow=ncol(data_matrix), ncol=1)); rownames(cell_clusters) = colnames(data_matrix)
   cell_clusters[,1] = rep(1, ncol(data_matrix))
+  message("Get clusters by iteration")
   while (iterate)
   {
     cell_clusters = cbind(cell_clusters, rep(0,nrow(cell_clusters)))
