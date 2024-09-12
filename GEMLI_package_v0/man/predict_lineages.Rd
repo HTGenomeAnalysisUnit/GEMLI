@@ -26,6 +26,9 @@ predict_lineages(GEMLI_items, repetitions=100, sample_size=(2/3), desired_cluste
   \item{
   fast}{'fast' =TRUE uses the HiClimR package for calculating correlations. This will make predictions faster but reduce precision. The default value is FALSE.
   }
+  \item{
+  cores}{'cores' =0 Set number of cores to use in parallelization. Zero will use all available cores. Default zero.
+  }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
