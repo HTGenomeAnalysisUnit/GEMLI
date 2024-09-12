@@ -15,7 +15,7 @@ predict_lineages <- function(GEMLI_items, repetitions=100, sample_size=(2/3), de
   results <- foreach(i = 1:repetitions, .combine = "+", .packages=c("GEMLI")) %dopar%
   {
     message("##### STEP ", i, " of ", repetitions, " #####")
-    r = data.matrix(matrix(0, nrow=ncol(data_matrix), ncol=ncol(data_matrix))); rownames(results) = colnames(data_matrix); colnames(results) = colnames(data_matrix)
+    r = data.matrix(matrix(0, nrow=ncol(data_matrix), ncol=ncol(data_matrix))); rownames(r) = colnames(data_matrix); colnames(r) = colnames(data_matrix)
     marker_genes_sample = sample(intersect(marker_genes, rownames(data_matrix)), round(length(intersect(marker_genes, rownames(data_matrix)))*sample_size,0))
     cell_clusters = quantify_clusters_iterative(data_matrix, marker_genes_sample, N=2, fast)
     cell_clusters_unique_name = cell_clusters; for (colname in 1:ncol(cell_clusters)){cell_clusters_unique_name[!is.na(cell_clusters_unique_name[,colname]),colname] = paste0(colname,'_',cell_clusters_unique_name[!is.na(cell_clusters_unique_name[,colname]),colname])}
