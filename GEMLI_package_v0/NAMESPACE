@@ -1,3 +1,4 @@
 import(Matrix)
 import(doParallel)
+import(parallel)
 exportPattern("^[[:alpha:]]+")
