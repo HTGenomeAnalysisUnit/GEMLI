@@ -8,7 +8,7 @@ predict_lineages
 This function predicts cell lineages from from single-cell RNA-sequencing data. It identifies potential lineage markers based on mean gene expression and gene expression variability and uses these markers in a repeated iterative clustering approach. Subsets of these genes are used to cluster cells until the desired cluster size is reached. This clustering is repeated many times for random subsets. The result is a cell by cell matrix that lists how many times each cell pair clustered together which translates into a confidence score. Cell pairs with high confidence scores are likely to be members of the same lineage.
 }
 \usage{
-predict_lineages(GEMLI_items, repetitions=100, sample_size=(2/3), desired_cluster_size=c(2,3), fast=FALSE)
+predict_lineages(GEMLI_items, repetitions=100, sample_size=(2/3), desired_cluster_size=c(2,3), fast=FALSE, cores=0)
 }
 \arguments{
   \item{
