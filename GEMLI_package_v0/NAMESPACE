@@ -1,4 +1,5 @@
 import(Matrix)
 import(doParallel)
 import(parallel)
+import(foreach)
 exportPattern("^[[:alpha:]]+")
